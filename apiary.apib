@@ -1,0 +1,119 @@
+FORMAT: 1A
+HOST: http://www.parkbase.com.br/pis/0.1/
+
+# Parkbase-Login
+
+Essa API determina as comunicações de login, registro e de validação da Parkbase Integrated Solution.
+
+## Login [/login]
+
+
+### Requisita Login [GET]
+Envia informacao de login e recebe token de confirmação.
+
++ Request (application/json)
+
+        {
+            "Login": "bolinha",
+            "Senha": "AES",
+            "ID": "fq83gda"
+        }
+
+
++ Response 200 (application/json)
+
+        
+        {
+            "Token": "AUHJB125EY1GQHEDA"
+        }
+    
+
+    
+
+## Validador de Token [/keep_alive]
+
+### Token Ainda é Válido [GET]
+Envia token para verificar a validade do mesmo.
+
++ Request (application/json)
+
+    
+        {
+            "id": "fq83gda",
+            "token": "AUHJB125EY1GQHEDA"
+        }
+    
+
++ Response 200 (application/json)
+
+    
+        {
+            "response" : 1
+        }
+    
+    
+
+## Programa Novo [/new_id]
+
+### Requisita ID [GET]
+Envia informção de login da primeira execução 
+e retorna um id válido para aquela instância do operacional
+
++ Request (application/json)
+
+        {
+            "Login": "UsuarioAntigo",
+            "Senha": "e150a1ec81e8e93e1eae2c3a77e66ec6dbd6a3b460f89c1d08aecf422ee401a0"
+        }
+        
++ Response 200 (application/json)
+    
+        {
+            "Sucesso": 1,
+            "ID": "10239as0"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "sucesso": 0,
+            "mensagem": "Login Inválido"
+        }
+        
++ Response 200 (application/json)
+
+        {
+            "sucesso": 0,
+            "mensagem": "ID esgotado"
+        }    
+        
+
+### Requisita Registro De Ususário [POST]
+Envia informações para registrar o usuário durante o seu primeiro 
+e recebe ID da instancia operacional.
+
++ Request (application/json)
+    
+    
+        {
+            "Login": "bolinha",
+            "Senha": "ba2f21baca2das352d1as564",
+            "Email": "bolinha@bol.com",
+            "CPF": "000.000.000-00",
+            "CNPJ": "00.000.000/0000-00",
+            "CEP": "00000-000",
+            "Cidade": "Pelotas",
+            "Endereco": "Avenida Termina",
+            "Bairro": "Centro",
+            "Numero": "0000",
+            "Complemento": "Bloco 2",
+            "id": "fq83gda"
+        }
+        
+
++ Response 200 (application/json)
+    
+    
+        {
+            "ID": "Ju1231v112ase123"
+        }
