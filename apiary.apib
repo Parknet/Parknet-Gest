@@ -1,119 +1,232 @@
 FORMAT: 1A
 HOST: http://www.parkbase.com.br/pis/0.1/
 
-# Parkbase-Login
+# Parkbase-Gestão
 
-Essa API determina as comunicações de login, registro e de validação da Parkbase Integrated Solution.
+Essa API determina as comunicações dos módulos de gestão da Parkbase Integrated Solution.
+O login é feito pelo sistema nativo do Django sem necessidade de representação na API.
 
-## Login [/login]
+## Dados do Usuário Pessoa Jurídica [/enterprise]
 
-
-### Requisita Login [GET]
-Envia informacao de login e recebe token de confirmação.
-
-+ Request (application/json)
-
-        {
-            "Login": "bolinha",
-            "Senha": "AES",
-            "ID": "fq83gda"
-        }
-
-
-+ Response 200 (application/json)
-
-        
-        {
-            "Token": "AUHJB125EY1GQHEDA"
-        }
-    
-
-    
-
-## Validador de Token [/keep_alive]
-
-### Token Ainda é Válido [GET]
-Envia token para verificar a validade do mesmo.
-
-+ Request (application/json)
-
-    
-        {
-            "id": "fq83gda",
-            "token": "AUHJB125EY1GQHEDA"
-        }
-    
-
-+ Response 200 (application/json)
-
-    
-        {
-            "response" : 1
-        }
-    
-    
-
-## Programa Novo [/new_id]
-
-### Requisita ID [GET]
-Envia informção de login da primeira execução 
-e retorna um id válido para aquela instância do operacional
+### Visualizar Informações da Empresa [GET]
 
 + Request (application/json)
 
         {
-            "Login": "UsuarioAntigo",
-            "Senha": "e150a1ec81e8e93e1eae2c3a77e66ec6dbd6a3b460f89c1d08aecf422ee401a0"
         }
-        
-+ Response 200 (application/json)
-    
-        {
-            "Sucesso": 1,
-            "ID": "10239as0"
-        }
-        
+
 + Response 200 (application/json)
 
         {
-            "sucesso": 0,
-            "mensagem": "Login Inválido"
+            "Nome_fantasia": "Jasmin Massagens",
+            "Responsável": "Jasmine",
+            "CNPJ" : "11111111111"
+            "Email": "lindinha17@bol.com.br",
+            "Endereço": "Rua dos doces",
+            "Numero": "1",
+            "Complemento": "Ao lado do orelhão",
+            "Bairro": "Gardênia",
+            "CEP": "99999999",
+            "Cidade": "Carlota",
+            "Estado": "RS",
+            "Telefone": "53999998888",
         }
-        
+
+### Editar dados do usuário pessoa jurídica [POST]
+
++ Request (apllication/json)
+
+        {
+            "Nome_fantasia": "Jasmin Massagens",
+            "Responsável": "Jasmine",
+            "CNPJ" : "11111111111"
+            "Email": "lindinha17@bol.com.br",
+            "Endereço": "Rua dos doces",
+            "Numero": "1",
+            "Complemento": "Ao lado do orelhão",
+            "Bairro": "Gardênia",
+            "CEP": "99999999",
+            "Cidade": "Carlota",
+            "Estado": "RS",
+            "Telefone": "53999998888",
+        }
+
 + Response 200 (application/json)
 
         {
-            "sucesso": 0,
-            "mensagem": "ID esgotado"
-        }    
-        
+            "status": "1 - Sucesso!"
+        }
 
-### Requisita Registro De Ususário [POST]
-Envia informações para registrar o usuário durante o seu primeiro 
-e recebe ID da instancia operacional.
+## Dados do Usuário Pessoa Física [/user]
+
+
+### Visualizar Informações do Usuário [GET]
 
 + Request (application/json)
-    
-    
+
         {
-            "Login": "bolinha",
-            "Senha": "ba2f21baca2das352d1as564",
-            "Email": "bolinha@bol.com",
-            "CPF": "000.000.000-00",
-            "CNPJ": "00.000.000/0000-00",
-            "CEP": "00000-000",
-            "Cidade": "Pelotas",
-            "Endereco": "Avenida Termina",
-            "Bairro": "Centro",
-            "Numero": "0000",
-            "Complemento": "Bloco 2",
-            "id": "fq83gda"
         }
-        
 
 + Response 200 (application/json)
-    
-    
+
         {
-            "ID": "Ju1231v112ase123"
+            "Nome": "Jasmin",
+            "CPF" : "11111111111"
+            "Email": "lindinha17@bol.com.br",
+            "Endereço": "Rua dos doces",
+            "Numero": "1",
+            "Complemento": "Ao lado do orelhão",
+            "Bairro": "Gardênia",
+            "CEP": "99999999",
+            "Cidade": "Carlota",
+            "Estado": "RS",
+            "Telefone": "53999998888"
+        }
+
+### Editar Informações do Usuário [POST]
+
++ Request (application/json)
+
+        {
+            "Nome": "Jasmin",
+            "CPF": "11111111111",
+            "Email": "lindinha17@bol.com.br",
+            "Endereço": "Rua dos doces",
+            "Numero": "1",
+            "Complemento": "Ao lado do orelhão",
+            "Bairro": "Gardênia",
+            "CEP": "99999999",
+            "Cidade": "Carlota",
+            "Estado": "RS",
+            "Telefone": "53999998888"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status": "1 - Sucesso!"
+        }
+
+## Estacionamentos [/estacionamentos]
+
+### Listar Estacionamentos [GET]
+
++ Request (application/json)
+
+        {
+        }
+
++ Response 200 (application/json)
+
+        {
+            "Estacionamentos": [
+                {
+                    "Id": "12315423",
+                    "Nome": "Estacionamento 24h"
+                }, {
+                    "Id": "12315424",
+                    "Nome": "Estacionamento 12h"
+                }, {
+                    "Id": "12315425",
+                    "Nome": "Estacionamento 36h"
+                }
+            ]
+        }
+
+## Estacionamento [/estacionamento]
+
+### Visualizar Informações do Estacionamento [GET]
+
++ Request (application/json)
+
+        {
+            "Id": "12315423"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "Nome": "Estacionamento 24h",
+            "Endereço": "Rua dos doces",
+            "Numero": "1",
+            "Complemento": "Ao lado do orelhão",
+            "Bairro": "Gardênia",
+            "CEP": "99999999",
+            "Cidade": "Carlota",
+            "Estado": "RS",
+            "Telefone": "53999998888",
+            "Latitude": "34.00001",
+            "Longitude": "34.0001",
+            "Poligono" :[
+                {
+                    "latidude": "34.0000000",
+                    "longitude": "35.000000"
+                },{
+                    "latidude": "34.0000000",
+                    "longitude": "35.000000"
+                },{
+                    "latidude": "34.0000000",
+                    "longitude": "35.000000"
+                },{
+                    "latidude": "34.0000000",
+                    "longitude": "35.000000"
+                }
+            ]
+        }
+
+
+### Criar/Editar Estacionamento [POST]
+Se id do estacionamento for vazio, cria um novo estacionamento
+
++ Request (application/json)
+
+        {
+            "id" : "",
+            "Nome": "Estacionamento 24h",
+            "Endereço": "Rua dos doces",
+            "Numero": "1",
+            "Complemento": "Ao lado do orelhão",
+            "Bairro": "Gardênia",
+            "CEP": "99999999",
+            "Cidade": "Carlota",
+            "Estado": "RS",
+            "Telefone": "53999998888",
+            "Latitude": "34.00001",
+            "Longitude": "34.0001",
+            "Poligono" :[
+                {
+                    "latidude": "34.0000000",
+                    "longitude": "35.000000"
+                },{
+                    "latidude": "34.0000000",
+                    "longitude": "35.000000"
+                },{
+                    "latidude": "34.0000000",
+                    "longitude": "35.000000"
+                },{
+                    "latidude": "34.0000000",
+                    "longitude": "35.000000"
+                }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status": "1 - Sucesso!"
+        }
+
+### Deleta o estacionamento [DELETE]
+Marca o estacionamento como não listavel
+
++ Request (application/json)
+
+        {
+            "Id": "12315423"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "status": "1 - Sucesso?"
         }
