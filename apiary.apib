@@ -18,18 +18,18 @@ O login é feito pelo sistema nativo do Django sem necessidade de representaçã
 + Response 200 (application/json)
 
         {
-            "Nome_fantasia": "Jasmin Massagens",
-            "Responsável": "Jasmine",
-            "CNPJ" : "11111111111"
-            "Email": "lindinha17@bol.com.br",
-            "Endereço": "Rua dos doces",
-            "Numero": "1",
-            "Complemento": "Ao lado do orelhão",
-            "Bairro": "Gardênia",
-            "CEP": "99999999",
-            "Cidade": "Carlota",
-            "Estado": "RS",
-            "Telefone": "53999998888",
+            "nome_fantasia": "Jasmin Massagens",
+            "responsável": "Jasmine",
+            "cnpj" : "11111111111"
+            "email": "lindinha17@bol.com.br",
+            "endereço": "Rua dos doces",
+            "numero": "1",
+            "complemento": "Ao lado do orelhão",
+            "bairro": "Gardênia",
+            "cep": "99999999",
+            "cidade": "Carlota",
+            "estado": "RS",
+            "telefone": "53999998888",
         }
 
 ### Editar dados do usuário pessoa jurídica [POST]
@@ -37,18 +37,18 @@ O login é feito pelo sistema nativo do Django sem necessidade de representaçã
 + Request (apllication/json)
 
         {
-            "Nome_fantasia": "Jasmin Massagens",
-            "Responsável": "Jasmine",
-            "CNPJ" : "11111111111"
-            "Email": "lindinha17@bol.com.br",
-            "Endereço": "Rua dos doces",
-            "Numero": "1",
-            "Complemento": "Ao lado do orelhão",
-            "Bairro": "Gardênia",
-            "CEP": "99999999",
-            "Cidade": "Carlota",
-            "Estado": "RS",
-            "Telefone": "53999998888",
+            "nome_fantasia": "Jasmin Massagens",
+            "responsável": "Jasmine",
+            "cnpj" : "11111111111"
+            "email": "lindinha17@bol.com.br",
+            "endereço": "Rua dos doces",
+            "numero": "1",
+            "complemento": "Ao lado do orelhão",
+            "bairro": "Gardênia",
+            "cep": "99999999",
+            "cidade": "Carlota",
+            "estado": "RS",
+            "telefone": "53999998888",
         }
 
 + Response 200 (application/json)
@@ -70,17 +70,17 @@ O login é feito pelo sistema nativo do Django sem necessidade de representaçã
 + Response 200 (application/json)
 
         {
-            "Nome": "Jasmin",
-            "CPF" : "11111111111"
-            "Email": "lindinha17@bol.com.br",
-            "Endereço": "Rua dos doces",
-            "Numero": "1",
-            "Complemento": "Ao lado do orelhão",
-            "Bairro": "Gardênia",
-            "CEP": "99999999",
-            "Cidade": "Carlota",
-            "Estado": "RS",
-            "Telefone": "53999998888"
+            "nome": "Jasmin",
+            "cpf" : "11111111111"
+            "email": "lindinha17@bol.com.br",
+            "endereço": "Rua dos doces",
+            "numero": "1",
+            "complemento": "Ao lado do orelhão",
+            "bairro": "Gardênia",
+            "cep": "99999999",
+            "cidade": "Carlota",
+            "estado": "RS",
+            "telefone": "53999998888"
         }
 
 ### Editar Informações do Usuário [POST]
@@ -88,17 +88,17 @@ O login é feito pelo sistema nativo do Django sem necessidade de representaçã
 + Request (application/json)
 
         {
-            "Nome": "Jasmin",
-            "CPF": "11111111111",
-            "Email": "lindinha17@bol.com.br",
-            "Endereço": "Rua dos doces",
-            "Numero": "1",
-            "Complemento": "Ao lado do orelhão",
-            "Bairro": "Gardênia",
-            "CEP": "99999999",
-            "Cidade": "Carlota",
-            "Estado": "RS",
-            "Telefone": "53999998888"
+            "nome": "Jasmin",
+            "cpf": "11111111111",
+            "email": "lindinha17@bol.com.br",
+            "endereço": "Rua dos doces",
+            "numero": "1",
+            "complemento": "Ao lado do orelhão",
+            "bairro": "Gardênia",
+            "cep": "99999999",
+            "cidade": "Carlota",
+            "estado": "RS",
+            "telefone": "53999998888"
         }
 
 + Response 200 (application/json)
@@ -119,16 +119,16 @@ O login é feito pelo sistema nativo do Django sem necessidade de representaçã
 + Response 200 (application/json)
 
         {
-            "Estacionamentos": [
+            "estacionamentos": [
                 {
-                    "Id": "12315423",
-                    "Nome": "Estacionamento 24h"
+                    "id": 12315423,
+                    "nome": "Estacionamento 24h"
                 }, {
-                    "Id": "12315424",
-                    "Nome": "Estacionamento 12h"
+                    "id": 12315424,
+                    "nome": "Estacionamento 12h"
                 }, {
-                    "Id": "12315425",
-                    "Nome": "Estacionamento 36h"
+                    "id": 12315425,
+                    "nome": "Estacionamento 36h"
                 }
             ]
         }
@@ -140,24 +140,24 @@ O login é feito pelo sistema nativo do Django sem necessidade de representaçã
 + Request (application/json)
 
         {
-            "Id": "12315423"
+            "id": 12315423
         }
 
 + Response 200 (application/json)
 
         {
-            "Nome": "Estacionamento 24h",
-            "Endereço": "Rua dos doces",
-            "Numero": "1",
-            "Complemento": "Ao lado do orelhão",
-            "Bairro": "Gardênia",
-            "CEP": "99999999",
-            "Cidade": "Carlota",
-            "Estado": "RS",
-            "Telefone": "53999998888",
-            "Latitude": "34.00001",
-            "Longitude": "34.0001",
-            "Poligono" :[
+            "nome": "Estacionamento 24h",
+            "endereço": "Rua dos doces",
+            "numero": "1",
+            "complemento": "Ao lado do orelhão",
+            "bairro": "Gardênia",
+            "cep": "99999999",
+            "cidade": "Carlota",
+            "estado": "RS",
+            "telefone": "53999998888",
+            "latitude": "34.00001",
+            "longitude": "34.0001",
+            "poligono" :[
                 {
                     "latidude": "34.0000000",
                     "longitude": "35.000000"
@@ -181,19 +181,19 @@ Se id do estacionamento for vazio, cria um novo estacionamento
 + Request (application/json)
 
         {
-            "id" : "",
-            "Nome": "Estacionamento 24h",
-            "Endereço": "Rua dos doces",
-            "Numero": "1",
-            "Complemento": "Ao lado do orelhão",
-            "Bairro": "Gardênia",
-            "CEP": "99999999",
-            "Cidade": "Carlota",
-            "Estado": "RS",
-            "Telefone": "53999998888",
-            "Latitude": "34.00001",
-            "Longitude": "34.0001",
-            "Poligono" :[
+            "id" : 222354,
+            "nome": "Estacionamento 24h",
+            "endereço": "Rua dos doces",
+            "numero": "1",
+            "complemento": "Ao lado do orelhão",
+            "bairro": "Gardênia",
+            "cep": "99999999",
+            "cidade": "Carlota",
+            "estado": "RS",
+            "telefone": "53999998888",
+            "latitude": "34.00001",
+            "longitude": "34.0001",
+            "poligono" :[
                 {
                     "latidude": "34.0000000",
                     "longitude": "35.000000"
@@ -222,11 +222,110 @@ Marca o estacionamento como não listavel
 + Request (application/json)
 
         {
-            "Id": "12315423"
+            "id": 12315423
         }
 
 + Response 200 (application/json)
 
         {
             "status": "1 - Sucesso?"
+        }
+
+## Reservas [/reservas]
+
+### Lista Reservas [GET]
+
++ Request (application/json)
+
+        {
+            "id": 1234654
+        }
+
++ Response 200 (application/json)
+
+        {
+            "Reservas": [
+                {
+                    "id": 14165431534,
+                    "entrada": "1997-07-16T19:20:30+01:00",
+                    "saida": "1997-07-16T19:22:30+01:00",
+                    "status": "pendente",
+                    "pagamento": "dinheiro"
+                },{
+                    "id": 14165431525,
+                    "entrada": "1997-07-16T19:20:30+01:00",
+                    "saida": "1997-07-16T19:22:30+01:00",
+                    "status": "pendente",
+                    "pagamento": "dinheiro"
+                },{
+                    "id": 14165431535,
+                    "entrada": "1997-07-16T19:20:30+01:00",
+                    "saida": "1997-07-16T19:22:30+01:00",
+                    "status": "pendente",
+                    "pagamento": "dinheiro"
+                },{
+                    "id": 14165431544,
+                    "entrada": "1997-07-16T19:20:30+01:00",
+                    "saida": "1997-07-16T19:22:30+01:00",
+                    "status": "pendente",
+                    "pagamento": "dinheiro"
+                }
+        }
+
+## Reserva [/reserva]
+
+### Informações [GET]
+
++ Request (application/json)
+
+        {
+            "id" = 12345678
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": 14165431534,
+            "nome": "Fulano de Tal",
+            "reputacao": 4.5,
+            "carro_cor": "Vermelho",
+            "carro_Modelo": "vectra",
+            "carro_placa": "IBF-2526",
+            "entrada": "1997-07-16T19:20:30+01:00",
+            "saida": "1997-07-16T19:22:30+01:00",
+            "status": "pendente",
+            "mensagem": "",
+            "pagamento": "dinheiro"
+            "valor" : 12.22
+        }
+
+## Confirmar Reserva [/confirma_reserva]
+
+### Confirmar [POST]
+
++ Request (application/json)
+
+        {
+            "id" = 12345678
+        }
+
++ Response 200 (application/json)
+
+        {
+        }
+
+## Negar Reserva [/nega_reserva]
+
+### Negar Reserva [POST]
+
++ Request (application/json)
+
+        {
+            "id" = 12345678
+            "mensagem" = "Estacionamento Cheio"
+        }
+
++ Response 200 (application/json)
+
+        {
         }
