@@ -291,6 +291,8 @@ Marca o estacionamento como não listavel
             "carro_cor": "Vermelho",
             "carro_Modelo": "vectra",
             "carro_placa": "IBF-2526",
+            "entrada_estimada": "1997-07-16T19:20:30+01:00",
+            "saida_estimada": "1997-07-16T19:22:30+01:00",
             "entrada": "1997-07-16T19:20:30+01:00",
             "saida": "1997-07-16T19:22:30+01:00",
             "status": "pendente",
@@ -299,7 +301,7 @@ Marca o estacionamento como não listavel
             "valor" : 12.22
         }
 
-## Confirmar Reserva [/confirma_reserva]
+## Confirmar Reserva [/confirmar_reserva]
 
 ### Confirmar [POST]
 
@@ -314,15 +316,50 @@ Marca o estacionamento como não listavel
         {
         }
 
-## Negar Reserva [/nega_reserva]
+## Negar Reserva [/negar_reserva]
 
-### Negar Reserva [POST]
+### Negar [POST]
 
 + Request (application/json)
 
         {
-            "id" = 12345678
+            "id" = 12345678,
             "mensagem" = "Estacionamento Cheio"
+        }
+
++ Response 200 (application/json)
+
+        {
+        }
+
+## Motorista Chegou [/chegar_reserva]
+
+### Chegou [POST]
+
+Caso não seja enviado o horário de entrada, o servidor tratará como se o motorista não tenha chego ainda.
+
++ Request (application/json)
+
+        {
+            "id" = 12345678,
+            "entrada" = "1997-07-16T19:22:30+01:00"
+        }
+
++ Response 200 (application/json)
+
+        {
+        }
+
+## Motorista Pagou no Local [/pagar]
+
+### Pagar [POST]
+
++ Request (application/json)
+
+        {A
+            "id" = 12345678,
+            "valor" = 4,5,
+            "saida" = "1997-07-16T19:22:30+01:00"
         }
 
 + Response 200 (application/json)
