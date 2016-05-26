@@ -6,6 +6,9 @@ HOST: http://www.parkbase.com.br/pis/0.1/
 Essa API determina as comunicações dos módulos de gestão da Parkbase Integrated Solution.
 O login é feito pelo sistema nativo do Django sem necessidade de representação na API.
 
+Essa API também engloba o sistema de reserva pelo lado do gestor do estacionament.
+
+
 ## Dados do Usuário Pessoa Jurídica [/enterprise]
 
 ### Visualizar Informações da Empresa [GET]
@@ -217,6 +220,7 @@ Se id do estacionamento for vazio, cria um novo estacionamento
         }
 
 ### Deleta o estacionamento [DELETE]
+
 Marca o estacionamento como não listavel
 
 + Request (application/json)
